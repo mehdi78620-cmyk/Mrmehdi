@@ -7,9 +7,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Unzip project
         run: |
-          unzip -o muskan-ai.zip -d temp
-          cp -r temp/muskan-ai/.. 2>/dev/null || cp -r temp/*/.. 2>/dev/null || cp -r temp/.. 2>/dev/null || true
-          rm -rf temp muskan-ai.zip
+          unzip -o muskan-ai.zip
+          rm -f muskan-ai.zip
+          ls -la
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
