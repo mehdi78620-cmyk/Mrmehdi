@@ -6,9 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unzip project
-        run: |
-          unzip -o muskan-ai.zip
-          rm -f muskan-ai.zip
+        run: unzip -o muskan-ai.zip && rm -f muskan-ai.zip
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -17,9 +15,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Build APK
-        run: |
-          chmod +x gradlew
-         ./gradlew assembleDebug
+        run: chmod +x gradlew &&./gradlew assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
